@@ -1,0 +1,42 @@
+{% extends 'index.html' %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+          integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.15.4/dist/bootstrap-table.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <title>Voucher</title>
+</head>
+<form action="" method="POST">
+    {% csrf_token %}
+    <table id="my_table_1" class="table table-bordered table-striped" data-toggle="table" data-sort-stable="true">
+
+        <thead>
+        <tr>
+            <th>Category</th>
+            <th>Product name</th>
+            <th>Product Price</th>
+            <th>Product Quantity</th>
+            <th>Requested Amount</th>
+            <th>Paid Amount</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>{{ form.category }}</td>
+            <td>{{ form.product }}</td>
+            <td>{{ form.product_price }}</td>
+            <td>{{ form.product_quantity }}</td>
+            <td>{{ form.requested_amount }}</td>
+            <td>{{ form.paid_amount }}</td>
+        </tr>
+        </tbody>
+    </table>
+    <button type="submit" class="btn btn-success" style="float:right">Submit</button>
+</form>
+{% endblock content %}
